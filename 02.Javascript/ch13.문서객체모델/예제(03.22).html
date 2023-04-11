@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03.22 연습문제</title>
+    <script>
+        function ok (){
+            let num1 = Number(document.getElementById('num1').value); // 숫자는 Number() 안에 넣기
+            let num2 = Number(document.getElementById('num2').value);
+            let powerArray = [];
+            if (num1 < 1 || num1 > 20 || num2 < 10 || num2 > 30 || num2-num1<4){ 
+                // 조건에 맞게 거르는 작업을 우선한다.
+                //alert, return없이 맞는 조건을 &&로도 표현 가능.
+                alert('다시 입력하세요.');
+                return; //되돌아감
+            }
+            for (let i = num1; i <= num2; i++){ // i는 num1~num2 사이로 설정
+                powerArray.push(2**i);
+            }
+            document.getElementById('result').innerHTML = powerArray;
+
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1>정수1부터 정수2까지를 지수로 하는 2의 거듭제곱 배열을 출력 </h1>
+        <input type="text" id="num1" placeholder="정수1 입력">
+        <input type="text" id="num2" placeholder="정수2 입력">
+        <button onclick="ok()">출력</button>
+        <p id="result"></p>
+</body>
+</html>

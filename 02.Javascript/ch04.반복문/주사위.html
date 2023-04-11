@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위</title>
+    <script>
+        function roll(){
+            let dice1 = parseInt(Math.ceil(Math.random() * 6));
+            let dice2 = parseInt(Math.ceil(Math.random() * 6));
+            let dice3 = parseInt(Math.ceil(Math.random() * 6));
+            let resTag = document.getElementById('result');
+
+            let numbers = [dice1,dice2,dice3]
+            let maxVal = 0;
+            for (let i = 0; i < numbers.length; i++)
+            if (maxVal < numbers[i])
+                maxVal = numbers[i];
+
+            if (dice1==dice2 && dice1==dice3)
+                resTag.innerHTML=`주사위 1 : ${dice1}, 주사위 2 : ${dice2}, 주사위 3 : ${dice3}, 결과 : ${10000+dice1*1000}원`;
+            else if (dice1==dice2 || dice1==dice3 || dice2==dice3){
+                if(dice1==dice2){
+                    x=dice1;    
+                }
+                else if (dice2==dice3){
+                    x=dice2;
+                }
+                else
+                    x=dice3;
+                    resTag.innerHTML=`주사위 1 : ${dice1}, 주사위 2 : ${dice2}, 주사위 3 : ${dice3}, 결과 : ${1000+x*100}원`;
+                }
+            else
+                 resTag.innerHTML=`주사위 1 : ${dice1}, 주사위 2 : ${dice2}, 주사위 3 : ${dice3}, 결과 : ${maxVal*100}원`;
+        }
+    </script>
+</head>
+<body>
+    <h3>주사위 던지기</h3>
+    <br>
+    <button onclick="roll()">던지기</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>

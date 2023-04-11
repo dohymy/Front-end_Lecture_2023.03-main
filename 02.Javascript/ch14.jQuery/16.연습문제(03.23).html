@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        function ok (){
+            let num1 = Number($('#num1').val()); // let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number($('#num2').val());
+            let powerArray = [];
+            if (num1 < 1 || num1 > 20 || num2 < 10 || num2 > 30 || num2-num1<4){ 
+                alert('다시 입력하세요.');
+                return;
+            }
+            for (let i = num1; i <= num2; i++){
+                powerArray.push(2**i);
+            $('#result').html(powerArray+',');
+            }
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1>정수1부터 정수2까지를 지수로 하는 2의 거듭제곱 배열을 출력 </h1>
+    <input type="text" id="num1" placeholder="정수1 입력">
+    <input type="text" id="num2" placeholder="정수2 입력">
+    <button onclick="ok()">출력</button>
+    <p id="result"></p>
+</body>
+</html>

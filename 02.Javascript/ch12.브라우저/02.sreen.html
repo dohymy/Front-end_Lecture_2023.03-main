@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen 객체</title>
+    <script>
+        window.onload = function(){ /*onload는 body를 불러온 후 실행하게 함*/
+        let attr = `width: ${screen.width}<br>`;
+        attr += `height: ${screen.height}<br>`;
+        attr += `availWidth: ${screen.availWidth}<br>`;
+        attr += `availHeight: ${screen.availHeight}<br>`;
+        attr += `colorDepth: ${screen.colorDepth}<br>`;
+        attr += `pixelDepth: ${screen.pixelDepth}<br>`;
+        document.getElementById('info').innerHTML = attr;
+        } /*info의 내용이 body에 있기 때문에 조정이 필요*/
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h3 id="info"></h3>
+    <!-- script는 head와 body 어디에 들어가도 된다. 단 body의 내용을 참조할 시 주의 -->
+</body>
+</html>

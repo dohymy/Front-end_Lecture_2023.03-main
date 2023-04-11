@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제4</title>
+    <script>
+        function fileName (){
+            let text1 = document.getElementById('text1').value;
+            let index = path.lastIndexOf('\\');
+            let filename = path.substring(index+1);
+            let pathArray = path.split('\\');
+        }
+        document.getElementById.innerHTML = `${pathArray[pathArray.length-1]}`;
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1>파일명 추출</h1>
+    <input type="text" id="text1" placeholder="파일주소 입력">
+    <button onclick="fileName()">확인</button>
+    <br>
+    <p id="result"></p>
+    
+</body>
+</html>

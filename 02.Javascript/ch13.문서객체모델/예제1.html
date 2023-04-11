@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제1</title>
+    <script>
+    function how (){
+        let num = document.getElementById('num').value;
+        let resTag = document.getElementById('result');
+        let totalSeconds = 0;
+        for (let hour = 0; hour<24; hour++){
+            for (let minute = 0; minute<60; minute++){
+                let display = hour + ':' + minute;
+                if (display.indexOf(`${num}`)>= 0)
+            totalSeconds += 60;
+            }
+        }
+        resTag.innerHTML = `${totalSeconds}초`;
+    }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1>00:00 ~ 23:59 중
+    <br>하루동안 n이 표시되는 시간은 몇 초인가?</h1>
+    <input type="text" id="num" placeholder="숫자n 입력">
+    <button onclick="how()">확인</button>
+    <p id="result"></p>
+</body>
+</html>

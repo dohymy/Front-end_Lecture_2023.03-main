@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제3</title>
+    <script>
+        function isPalindrome(){
+            let text1 = document.getElementById('text1').value;
+            let reverseText1 = text1.split('').reverse().join('');
+            let result = (text1 == reverseText1) ? 'Palindrome 입니다.' : 'Palindrome이 아닙니다.'
+            document.getElementById(a).innerHTML = result;
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1>palindrome</h1>
+    <input type="text" id="text1" placeholder="입력">
+    <button onclick="isPalindrome()">확인</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>
